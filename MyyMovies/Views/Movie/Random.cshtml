@@ -1,0 +1,36 @@
+﻿@Model MyyMovies.Models.Movie
+
+@using MyyMovies.Models
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Movie.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text> No customers are present there </text>
+}
+
+else
+{
+ <ul>
+    
+     @foreach (var customer in Model.Customers)
+     {
+         <li>@customer.Name</li>
+     }
+
+</ul>
+
+}
+
+
+@*<h2>@(((Movies)ViewData["Movie"]).Name) </h2>*@
+
+@*<h2>@(((Movie)ViewBag.Movie).Name) </h2>*@
+
+
+
